@@ -1,0 +1,16 @@
+{
+  "extends": ["react-app", "prettier", "plugin:react/recommended"],
+  "plugins": ["prettier"],
+  "rules": {
+    "react/no-unescaped-entities": 0,
+    "import/no-named-as-default": 0,
+    "react/prop-types": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "import/no-anonymous-default-export": "off"
+  }
+}
