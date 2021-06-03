@@ -1,4 +1,4 @@
 export default {
-  allQuestions: "all-questons",
-  oneQuestionPerPage: "single-queston"
+	allQuestions: "all-questons",
+	oneQuestionPerPage: "single-queston",
 };

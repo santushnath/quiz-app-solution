@@ -1,26 +1,45 @@
 import React, { useEffect, useState } from "react";
 import localStorage from "../../utils/localStorage";
+import { Card, CardBody, Col, Row } from "reactstrap";
+import QuizCard from "../quiz/QuizCard";
 
 const Home = () => {
-  const [quizs, setQuizs] = useState([]);
+	const [quizzes, setQuizzes] = useState([]);
 
-  const loadQuizs = () => {
-    localStorage.getData("quizs").then((res) => setQuizs(res));
-  };
+	const loadQuizzes = () => {
+		localStorage.getData("quizzes").then((res) => setQuizzes(res));
+	};
 
-  useEffect(() => {
-    loadQuizs();
-  }, []);
+	useEffect(() => {
+		loadQuizzes();
+	}, []);
 
-  return (
-    <div>
-      <h1>All quizs</h1>
-      {!quizs.length && <div className="text-600">No quiz</div>}
-      {quizs.map((quiz, i) => (
-        <div key={i}>{quiz.title}</div>
-      ))}
-    </div>
-  );
+	return (
+		<div>
+			<Card className="shadow">
+				<CardBody>
+					<h1>Quizzes</h1>
+				</CardBody>
+			</Card>
+
+			<Row className="mt-4">
+				{!quizzes.length && (
+					<Col md={12}>
+						<Card className="shadow">
+							<CardBody className="fs-1 fw-bold text-black-50 text-center">
+								No Quiz
+							</CardBody>
+						</Card>
+					</Col>
+				)}
+				{quizzes.map((quiz, i) => (
+					<Col md="4" className="mb-4" key={i}>
+						<QuizCard quiz={quiz} viewType="visitor" />
+					</Col>
+				))}
+			</Row>
+		</div>
+	);
 };
 
 export default Home;
