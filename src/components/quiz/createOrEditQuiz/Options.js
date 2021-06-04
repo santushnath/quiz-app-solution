@@ -3,7 +3,6 @@ import { Input, CustomInput, Button, Col, Row } from "reactstrap";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { v4 as uuid } from "uuid";
-import _ from "lodash";
 
 const Options = ({
 	onUpdate,

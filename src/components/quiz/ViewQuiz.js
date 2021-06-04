@@ -1,17 +1,9 @@
-import React, { useState, useEffect, useCallback, Fragment } from "react";
-import {
-	Form,
-	Card,
-	CardBody,
-	Button,
-	Col,
-	CustomInput,
-	Input,
-} from "reactstrap";
+import React, { useState, useEffect, Fragment } from "react";
+import { Form, Card, CardBody, Button, Col, CustomInput } from "reactstrap";
 import quizLayout from "../../utils/quizLayout";
 import localStorage from "../../utils/localStorage";
 import { v4 as uuid } from "uuid";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Row from "reactstrap/lib/Row";
 import classNames from "classnames";
 import PropTypes from "prop-types";
